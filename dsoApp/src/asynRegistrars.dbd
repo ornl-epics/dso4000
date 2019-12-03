@@ -1,0 +1,4 @@
+registrar(drvAsynSerialPortRegisterCommands)
+registrar(drvAsynIPPortRegisterCommands)
+registrar(drvAsynIPServerPortRegisterCommands)
+registrar(vxi11RegisterCommands)

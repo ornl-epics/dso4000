@@ -1,0 +1,4 @@
+# RELEASE - Location of external support modules
+
+# Needs EPICSBASE, ASYN, STREAM
+-include $(TOP)/../RELEASE.local

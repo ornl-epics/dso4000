@@ -1,0 +1,46 @@
+# P Prefix
+# R Record root
+# L Link (port)
+
+record(bo, "$(P)$(R):setup")
+{
+    field(DTYP, "stream")
+    field(OUT,  "@dso.proto setup $(L)")
+}
+
+record(waveform, "$(P)$(R):ch1")
+{
+    field(DTYP, "stream")
+    field(INP,  "@dso.proto curve1 $(L)")
+    field(NELM, "10000")
+    field(FTVL, "CHAR")
+    field(SCAN, "2 second")
+}
+
+record(waveform, "$(P)$(R):ch2")
+{
+    field(DTYP, "stream")
+    field(INP,  "@dso.proto curve2 $(L)")
+    field(NELM, "10000")
+    field(FTVL, "CHAR")
+    field(SCAN, "2 second")
+}
+
+record(waveform, "$(P)$(R):ch3")
+{
+    field(DTYP, "stream")
+    field(INP,  "@dso.proto curve3 $(L)")
+    field(NELM, "10000")
+    field(FTVL, "CHAR")
+    field(SCAN, "2 second")
+}
+
+record(waveform, "$(P)$(R):ch4")
+{
+    field(DTYP, "stream")
+    field(INP,  "@dso.proto curve4 $(L)")
+    field(NELM, "10000")
+    field(FTVL, "CHAR")
+    field(SCAN, "2 second")
+}
+

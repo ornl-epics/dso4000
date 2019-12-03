@@ -1,0 +1,11 @@
+
+record(asyn,"$(P)$(R)")
+{
+    field(DTYP,"asynRecordDevice")
+    field(PORT,"DSO")
+    field(TMSK,"9")
+    field(TIOM,"2")
+    field(TMOT,"5.0")
+    field(AOUT,"*IDN?")
+}
+

@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>ASYNRec</name>
+  <x>42</x>
+  <y>21</y>
+  <width>600</width>
+  <height>469</height>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>CAV</text>
+    <y>1192</y>
+    <width>72</width>
+    <height>14</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-bg/Anno-pri" red="105" green="105" blue="105">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>ASYN Record</text>
+    <x>10</x>
+    <y>10</y>
+    <width>180</width>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="LINAC title" red="185" green="198" blue="184">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Port</text>
+    <x>10</x>
+    <y>50</y>
+    <width>26</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM TextentryClass</name>
+    <pv_name>$(P)$(R).PORT</pv_name>
+    <x>50</x>
+    <y>40</y>
+    <width>110</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>EDM activeMessageButtonClass</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(P)$(R).PROC</pv_name>
+        <value>1</value>
+        <description>Run</description>
+      </action>
+    </actions>
+    <x>500</x>
+    <y>390</y>
+    <width>60</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Monitor: NORMAL" red="0" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="grey-4" red="187" green="187" blue="187">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="radio" version="2.0.0">
+    <name>EDM activeRadioButtonClass</name>
+    <pv_name>$(P)$(R).PCNCT</pv_name>
+    <x>170</x>
+    <y>30</y>
+    <height>60</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal>false</horizontal>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="radio" version="2.0.0">
+    <name>EDM activeRadioButtonClass</name>
+    <pv_name>$(P)$(R).TMOD</pv_name>
+    <x>10</x>
+    <y>100</y>
+    <height>140</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal>false</horizontal>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="radio" version="2.0.0">
+    <name>EDM activeRadioButtonClass</name>
+    <pv_name>$(P)$(R).IFACE</pv_name>
+    <x>130</x>
+    <y>100</y>
+    <height>140</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <horizontal>false</horizontal>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM TextentryClass</name>
+    <pv_name>$(P)$(R).TMOT</pv_name>
+    <x>240</x>
+    <y>140</y>
+    <width>80</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Timeout</text>
+    <x>240</x>
+    <y>110</y>
+    <width>51</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM TextentryClass</name>
+    <pv_name>$(P)$(R).AOUT</pv_name>
+    <x>60</x>
+    <y>270</y>
+    <width>370</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Write</text>
+    <x>10</x>
+    <y>280</y>
+    <width>33</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>EOS</text>
+    <x>450</x>
+    <y>280</y>
+    <width>30</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM TextentryClass</name>
+    <pv_name>$(P)$(R).OEOS</pv_name>
+    <x>500</x>
+    <y>270</y>
+    <width>60</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>$(P)$(R).NAWT</pv_name>
+    <x>62</x>
+    <y>322</y>
+    <width>94</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Mono" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>written</text>
+    <x>10</x>
+    <y>320</y>
+    <width>42</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>$(P)$(R).NORD</pv_name>
+    <x>62</x>
+    <y>382</y>
+    <width>94</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Mono" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>read</text>
+    <x>10</x>
+    <y>380</y>
+    <width>29</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>$(P)$(R).AINP</pv_name>
+    <x>62</x>
+    <y>352</y>
+    <width>366</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Mono" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <interactive>true</interactive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Read</text>
+    <x>10</x>
+    <y>350</y>
+    <width>34</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM TextentryClass</name>
+    <pv_name>$(P)$(R).IEOS</pv_name>
+    <x>500</x>
+    <y>340</y>
+    <width>60</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>EOS</text>
+    <x>450</x>
+    <y>350</y>
+    <width>30</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>EDM TextupdateClass</name>
+    <pv_name>$(P)$(R).ERRS</pv_name>
+    <x>62</x>
+    <y>412</y>
+    <width>366</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Mono" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <format>6</format>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Status</text>
+    <x>10</x>
+    <y>410</y>
+    <width>40</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM TextentryClass</name>
+    <pv_name>$(P)$(R).TMSK</pv_name>
+    <x>360</x>
+    <y>50</y>
+    <width>80</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <format>4</format>
+    <precision>0</precision>
+    <show_units>false</show_units>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Asyn</text>
+    <x>360</x>
+    <y>30</y>
+    <width>32</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>EDM activeButtonClass</name>
+    <pv_name>$(P)$(R).TB0</pv_name>
+    <x>360</x>
+    <y>100</y>
+    <width>50</width>
+    <height>20</height>
+    <off_label>Error</off_label>
+    <off_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </off_color>
+    <on_label>Error</on_label>
+    <on_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="unknown" red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>EDM activeButtonClass</name>
+    <pv_name>$(P)$(R).TB1</pv_name>
+    <x>360</x>
+    <y>130</y>
+    <width>50</width>
+    <height>20</height>
+    <off_label>Device</off_label>
+    <off_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </off_color>
+    <on_label>Device</on_label>
+    <on_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="unknown" red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>EDM activeButtonClass</name>
+    <pv_name>$(P)$(R).TB2</pv_name>
+    <x>360</x>
+    <y>160</y>
+    <width>50</width>
+    <height>20</height>
+    <off_label>Filter</off_label>
+    <off_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </off_color>
+    <on_label>Filter</on_label>
+    <on_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="unknown" red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>EDM activeButtonClass</name>
+    <pv_name>$(P)$(R).TB3</pv_name>
+    <x>360</x>
+    <y>190</y>
+    <width>50</width>
+    <height>20</height>
+    <off_label>Driver</off_label>
+    <off_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </off_color>
+    <on_label>Driver</on_label>
+    <on_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="unknown" red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>EDM activeButtonClass</name>
+    <pv_name>$(P)$(R).TB4</pv_name>
+    <x>360</x>
+    <y>220</y>
+    <width>50</width>
+    <height>20</height>
+    <off_label>Flow</off_label>
+    <off_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </off_color>
+    <on_label>Flow</on_label>
+    <on_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="unknown" red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Trace</text>
+    <x>360</x>
+    <y>10</y>
+    <width>38</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Read/Write Tests</text>
+    <x>10</x>
+    <y>250</y>
+    <width>114</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM TextentryClass</name>
+    <pv_name>$(P)$(R).TIOM</pv_name>
+    <x>450</x>
+    <y>50</y>
+    <width>80</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <format>4</format>
+    <precision>0</precision>
+    <show_units>false</show_units>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>I/O</text>
+    <x>450</x>
+    <y>30</y>
+    <width>19</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>EDM activeButtonClass</name>
+    <pv_name>$(P)$(R).TIB0</pv_name>
+    <x>450</x>
+    <y>100</y>
+    <width>50</width>
+    <height>20</height>
+    <off_label>ASCII</off_label>
+    <off_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </off_color>
+    <on_label>ASCII</on_label>
+    <on_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="unknown" red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>EDM activeButtonClass</name>
+    <pv_name>$(P)$(R).TIB1</pv_name>
+    <x>450</x>
+    <y>130</y>
+    <width>50</width>
+    <height>20</height>
+    <off_label>Escape</off_label>
+    <off_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </off_color>
+    <on_label>Escape</on_label>
+    <on_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="unknown" red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>EDM activeButtonClass</name>
+    <pv_name>$(P)$(R).TIB2</pv_name>
+    <x>450</x>
+    <y>160</y>
+    <width>50</width>
+    <height>20</height>
+    <off_label>Hex</off_label>
+    <off_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </off_color>
+    <on_label>Hex</on_label>
+    <on_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="unknown" red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>EDM TextentryClass</name>
+    <pv_name>$(P)$(R).TFIL</pv_name>
+    <x>450</x>
+    <y>210</y>
+    <width>140</width>
+    <height>40</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Controller" red="0" green="0" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Wid-alt/Anno-sec" red="174" green="174" blue="174">
+      </color>
+    </background_color>
+    <format>4</format>
+    <precision>0</precision>
+    <show_units>false</show_units>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>EDM activeXTextClass</name>
+    <text>Trace File</text>
+    <x>450</x>
+    <y>190</y>
+    <width>63</width>
+    <height>16</height>
+    <foreground_color>
+      <color name="black" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="yellow-38" red="160" green="160" blue="0">
+      </color>
+    </background_color>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+  </widget>
+</display>

@@ -1,0 +1,46 @@
+# Tektronix DSO 4000
+
+Terminator = LF;
+Separator = ",";
+ReplyTimeout = 2000;
+ReadTimeout = 5000;
+LockTimeout = 8000;
+
+# Setup, either on-demand when processed, but also automatically when connecting:
+# Do not echo header in reply, but if you do, then use full name
+# Get 10000 samples, 1 byte per sample
+setup
+{
+  out ":HEAD OFF;:VERB ON;:DAT:STAR 1;:DAT:STOP 10000;:DAT:WID 1;:DAT:ENC ASCII;";
+  @init
+  {
+    out ":HEAD OFF;:VERB ON;:DAT:STAR 1;:DAT:STOP 10000;:DAT:WID 1;:DAT:ENC ASCII;";
+  }
+}
+
+
+
+curve1
+{
+  out ":DAT:SOU CH1;:CURV?";
+  in "%i";
+}
+
+curve2
+{
+  out ":DAT:SOU CH2;:CURV?";
+  in "%i";
+}
+
+curve3
+{
+  out ":DAT:SOU CH3;:CURV?";
+  in "%i";
+}
+
+curve4
+{
+  out ":DAT:SOU CH4;:CURV?";
+  in "%i";
+}
+
