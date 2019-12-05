@@ -44,3 +44,36 @@ record(waveform, "$(P)$(R):ch4")
     field(SCAN, "2 second")
 }
 
+record(lsi, "$(P)$(R):info1")
+{
+    field(DTYP, "stream")
+    field(INP,  "@dso.proto info1 $(L)")
+    field(SIZV, "100")
+    field(SCAN, "10 second")
+}
+
+record(lsi, "$(P)$(R):info2")
+{
+    field(DTYP, "stream")
+    field(INP,  "@dso.proto info2 $(L)")
+    field(SIZV, "100")
+    field(SCAN, "10 second")
+}
+
+record(lsi, "$(P)$(R):info3")
+{
+    field(DTYP, "stream")
+    field(INP,  "@dso.proto info3 $(L)")
+    field(SIZV, "100")
+    field(SCAN, "10 second")
+}
+
+record(lsi, "$(P)$(R):info4")
+{
+    field(DTYP, "stream")
+    field(INP,  "@dso.proto info4 $(L)")
+    field(SIZV, "100")
+    field(SCAN, "10 second")
+}
+
+

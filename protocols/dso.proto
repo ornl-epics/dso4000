@@ -1,7 +1,7 @@
 # Tektronix DSO 4000
 
-Terminator = LF;
 Separator = ",";
+Terminator = LF;
 ReplyTimeout = 2000;
 ReadTimeout = 5000;
 LockTimeout = 8000;
@@ -42,5 +42,31 @@ curve4
 {
   out ":DAT:SOU CH4;:CURV?";
   in "%i";
+}
+
+# Info is returned as "xxx".
+# Use regex to get just xxx, not quotes
+info1
+{
+  out ":DAT:SOU CH1;:WFMOutpre:WFID?";
+  in '%.1/"(.*)"/';
+}
+
+info2
+{
+  out ":DAT:SOU CH2;:WFMOutpre:WFID?";
+  in '%.1/"(.*)"/';
+}
+
+info3
+{
+  out ":DAT:SOU CH3;:WFMOutpre:WFID?";
+  in '%.1/"(.*)"/';
+}
+
+info4
+{
+  out ":DAT:SOU CH4;:WFMOutpre:WFID?";
+  in '%.1/"(.*)"/';
 }
 

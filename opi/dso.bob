@@ -27,8 +27,8 @@
   </widget>
   <widget type="xyplot" version="2.0.0">
     <name>X/Y Plot</name>
-    <x>30</x>
-    <y>30</y>
+    <x>10</x>
+    <y>10</y>
     <width>600</width>
     <height>400</height>
     <x_axis>
@@ -137,5 +137,37 @@
         <visible>true</visible>
       </trace>
     </traces>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>Test_LLRF:DSO_Kly1:info1.VAL$</pv_name>
+    <x>10</x>
+    <y>660</y>
+    <width>550</width>
+    <format>6</format>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>Test_LLRF:DSO_Kly1:info2.VAL$</pv_name>
+    <x>10</x>
+    <y>680</y>
+    <width>550</width>
+    <format>6</format>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>Test_LLRF:DSO_Kly1:info3.VAL$</pv_name>
+    <x>10</x>
+    <y>700</y>
+    <width>550</width>
+    <format>6</format>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>Test_LLRF:DSO_Kly1:info4.VAL$</pv_name>
+    <x>10</x>
+    <y>720</y>
+    <width>550</width>
+    <format>6</format>
   </widget>
 </display>
