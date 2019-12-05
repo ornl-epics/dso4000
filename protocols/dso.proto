@@ -75,3 +75,28 @@ xincr
   out ":WFMOUTPRE:XINCR?";
   in "%f";
 }
+
+mult1
+{
+  out ":DAT:SOU CH1;:WFMOutpre:YMUlt?";
+  in "%f";
+}
+
+mult2
+{
+  out ":DAT:SOU CH2;:WFMOutpre:YMUlt?";
+  in "%f";
+}
+
+mult3
+{
+  out ":DAT:SOU CH3;:WFMOutpre:YMUlt?";
+  in "%f";
+}
+
+mult4
+{
+  out ":DAT:SOU CH4;:WFMOutpre:YMUlt?";
+  in "%f";
+}
+

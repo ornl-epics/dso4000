@@ -25,7 +25,11 @@ asynSetTraceIOMask("DSO", 0, 1)
 
 ## Load record instances
 dbLoadRecords "db/asyn_debug.db", "P=Test_LLRF:,R=DSO_Kly:ASYN"
-dbLoadRecords "db/dso.db", "P=Test_LLRF:,R=DSO_Kly1,L=DSO"
+dbLoadRecords "db/dso_common.db", "P=Test_LLRF:,R=DSO_Kly1,L=DSO"
+dbLoadRecords "db/dso_channel.db", "P=Test_LLRF:,R=DSO_Kly1,L=DSO,C=1"
+dbLoadRecords "db/dso_channel.db", "P=Test_LLRF:,R=DSO_Kly1,L=DSO,C=2"
+dbLoadRecords "db/dso_channel.db", "P=Test_LLRF:,R=DSO_Kly1,L=DSO,C=3"
+dbLoadRecords "db/dso_channel.db", "P=Test_LLRF:,R=DSO_Kly1,L=DSO,C=4"
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit

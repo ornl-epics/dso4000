@@ -1,0 +1,48 @@
+# P Prefix
+# R Record root
+# L Link (port)
+# C Scope channel 1-4
+
+record(ai, "$(P)$(R):ch$(C)_mult")
+{
+    field(DTYP, "stream")
+    field(INP,  "@dso.proto mult$(C) $(L)")
+    field(SCAN, "2 second")
+    field(FLNK, "$(P)$(R):ch$(C)_raw")
+}
+record(waveform, "$(P)$(R):ch$(C)_raw")
+{
+    field(DTYP, "stream")
+    field(INP,  "@dso.proto curve$(C) $(L)")
+    field(NELM, "10000")
+    field(FTVL, "CHAR")
+    field(FLNK, "$(P)$(R):ch$(C)_calc")
+}
+record(aSub, "$(P)$(R):ch$(C)_calc")
+{
+    field(SNAM, "asub_compute_y")
+    field(INPA, "$(P)$(R):ch$(C)_mult")
+    field(INPB, "$(P)$(R):ch$(C)_raw")
+    field(FTA,  "DOUBLE")
+    field(FTB,  "CHAR")
+    field(NOB,  "10000")
+    field(FTVA, "DOUBLE")
+    field(NOVA, "10000")
+    field(FLNK, "$(P)$(R):ch$(C)")
+}
+record(waveform, "$(P)$(R):ch$(C)")
+{
+    field(INP,  "$(P)$(R):ch$(C)_calc.VALA")
+    field(NELM, "10000")
+    field(FTVL, "DOUBLE")
+    field(EGU,  "V")
+    field(PREC, "6")
+}
+
+record(lsi, "$(P)$(R):info$(C)")
+{
+    field(DTYP, "stream")
+    field(INP,  "@dso.proto info$(C) $(L)")
+    field(SIZV, "100")
+    field(SCAN, "10 second")
+}

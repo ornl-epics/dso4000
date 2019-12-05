@@ -3,4 +3,5 @@ registrar(drvAsynIPPortRegisterCommands)
 registrar(drvAsynIPServerPortRegisterCommands)
 registrar(vxi11RegisterCommands)
 
-function(asub_computex)
+function(asub_compute_x)
+function(asub_compute_y)

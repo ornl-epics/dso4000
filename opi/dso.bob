@@ -5,8 +5,8 @@
     <N>_Kly</N>
     <S>Test</S>
   </macros>
-  <width>680</width>
-  <height>205</height>
+  <width>740</width>
+  <height>530</height>
   <widget type="action_button" version="3.0.0">
     <name>Action Button</name>
     <actions>
@@ -21,6 +21,7 @@
       </action>
     </actions>
     <x>650</x>
+    <y>500</y>
     <width>80</width>
     <height>20</height>
     <tooltip>$(actions)</tooltip>
@@ -29,8 +30,9 @@
     <name>X/Y Plot</name>
     <x>10</x>
     <y>10</y>
-    <width>600</width>
+    <width>720</width>
     <height>400</height>
+    <show_legend>false</show_legend>
     <x_axis>
       <title>Time [ms]</title>
       <autoscale>true</autoscale>
@@ -49,6 +51,57 @@
       <visible>true</visible>
     </x_axis>
     <y_axes>
+      <y_axis>
+        <title></title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <visible>true</visible>
+      </y_axis>
+      <y_axis>
+        <title></title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <visible>true</visible>
+      </y_axis>
+      <y_axis>
+        <title></title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <title_font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </title_font>
+        <scale_font>
+          <font name="Default" family="Liberation Sans" style="REGULAR" size="14.0">
+          </font>
+        </scale_font>
+        <visible>true</visible>
+      </y_axis>
       <y_axis>
         <title></title>
         <autoscale>true</autoscale>
@@ -90,7 +143,7 @@
         <x_pv>Test_LLRF:DSO_Kly1:x</x_pv>
         <y_pv>Test_LLRF:DSO_Kly1:ch2</y_pv>
         <err_pv></err_pv>
-        <axis>0</axis>
+        <axis>1</axis>
         <trace_type>1</trace_type>
         <color>
           <color red="100" green="100" blue="255">
@@ -107,7 +160,7 @@
         <x_pv>Test_LLRF:DSO_Kly1:x</x_pv>
         <y_pv>Test_LLRF:DSO_Kly1:ch3</y_pv>
         <err_pv></err_pv>
-        <axis>0</axis>
+        <axis>2</axis>
         <trace_type>1</trace_type>
         <color>
           <color red="255" green="0" blue="200">
@@ -124,7 +177,7 @@
         <x_pv>Test_LLRF:DSO_Kly1:x</x_pv>
         <y_pv>Test_LLRF:DSO_Kly1:ch4</y_pv>
         <err_pv></err_pv>
-        <axis>0</axis>
+        <axis>3</axis>
         <trace_type>1</trace_type>
         <color>
           <color red="100" green="255" blue="100">
@@ -142,7 +195,7 @@
     <name>Text Update</name>
     <pv_name>Test_LLRF:DSO_Kly1:info1.VAL$</pv_name>
     <x>10</x>
-    <y>660</y>
+    <y>440</y>
     <width>550</width>
     <format>6</format>
   </widget>
@@ -150,7 +203,7 @@
     <name>Text Update</name>
     <pv_name>Test_LLRF:DSO_Kly1:info2.VAL$</pv_name>
     <x>10</x>
-    <y>680</y>
+    <y>460</y>
     <width>550</width>
     <format>6</format>
   </widget>
@@ -158,7 +211,7 @@
     <name>Text Update</name>
     <pv_name>Test_LLRF:DSO_Kly1:info3.VAL$</pv_name>
     <x>10</x>
-    <y>700</y>
+    <y>480</y>
     <width>550</width>
     <format>6</format>
   </widget>
@@ -166,7 +219,7 @@
     <name>Text Update</name>
     <pv_name>Test_LLRF:DSO_Kly1:info4.VAL$</pv_name>
     <x>10</x>
-    <y>720</y>
+    <y>500</y>
     <width>550</width>
     <format>6</format>
   </widget>

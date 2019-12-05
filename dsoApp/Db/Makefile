@@ -5,7 +5,8 @@ include $(TOP)/configure/CONFIG
 
 # Install databases, templates & substitutions like this
 DB += asyn_debug.db
-DB += dso.db
+DB += dso_common.db
+DB += dso_channel.db
 
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_TEMPLATE = <templatename>
