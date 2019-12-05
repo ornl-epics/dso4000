@@ -70,3 +70,8 @@ info4
   in '%.1/"(.*)"/';
 }
 
+xincr
+{
+  out ":WFMOUTPRE:XINCR?";
+  in "%f";
+}

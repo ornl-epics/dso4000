@@ -14,3 +14,13 @@ Example commands to type:
 WFMOutpre?
 CURVE?
 
+
+WFMOUTPRE:XUNIT?
+"s"
+
+WFMOUTPRE:XZERO?
+-312.0000E-6
+
+WFMOUTPRE:XINCR?
+400.0000E-9
+

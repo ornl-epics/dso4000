@@ -17,10 +17,11 @@ DBD += dso.dbd
 dso_DBD += base.dbd
 dso_DBD += asyn.dbd
 dso_DBD += stream.dbd
-dso_DBD += asynRegistrars.dbd
+dso_DBD += dso_registrars.dbd
 
 # dso_registerRecordDeviceDriver.cpp derives from dso.dbd
 dso_SRCS += dso_registerRecordDeviceDriver.cpp
+dso_SRCS += subroutines.c
 
 # Build the main IOC entry point where needed
 dso_SRCS_DEFAULT += dsoMain.cpp
