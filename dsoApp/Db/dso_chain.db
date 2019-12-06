@@ -6,7 +6,7 @@
 # turn others into Passive
 record(ai, "$(P)$(R):ch1_mult")
 {
-    field(SCAN, "2 second")
+    field(SCAN, "1 second")
 }
 record(ai, "$(P)$(R):ch2_mult")
 {
