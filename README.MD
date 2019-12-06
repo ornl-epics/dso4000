@@ -25,7 +25,15 @@ DATa:ENCd RIBinary;
 
 DATa:ENCd RIBinary;:DAT:SOU CH1;:CURV?
 
-#510000xxxx
 
+Must not query channel that's disabled.
+Select and enable channel:
+:SEL:CH4 1;
 
+Check if channel is enabled:
+:SEL:CH4?
+
+In case of 'error', how to recover? Scope just stops responding for a long time...
+*ESR?
+*CLS;
 

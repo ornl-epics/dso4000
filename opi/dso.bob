@@ -7,25 +7,6 @@
   </macros>
   <width>740</width>
   <height>530</height>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
-    <actions>
-      <action type="open_display">
-        <file>ASYNRec.bob</file>
-        <macros>
-          <P>$(S)_LLRF:</P>
-          <R>DSO$(N):ASYN</R>
-        </macros>
-        <target>replace</target>
-        <description>Debug</description>
-      </action>
-    </actions>
-    <x>650</x>
-    <y>500</y>
-    <width>80</width>
-    <height>20</height>
-    <tooltip>$(actions)</tooltip>
-  </widget>
   <widget type="xyplot" version="2.0.0">
     <name>X/Y Plot</name>
     <x>10</x>
@@ -191,36 +172,124 @@
       </trace>
     </traces>
   </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>Test_LLRF:DSO_Kly1:enabled1</pv_name>
+    <x>10</x>
+    <y>440</y>
+    <width>20</width>
+    <height>20</height>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box</name>
+    <pv_name>Test_LLRF:DSO_Kly1:enable1</pv_name>
+    <x>590</x>
+    <y>435</y>
+    <height>30</height>
+    <label>Enable</label>
+  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
     <pv_name>Test_LLRF:DSO_Kly1:info1.VAL$</pv_name>
-    <x>10</x>
+    <x>35</x>
     <y>440</y>
     <width>550</width>
     <format>6</format>
   </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>Test_LLRF:DSO_Kly1:enabled2</pv_name>
+    <x>10</x>
+    <y>465</y>
+    <width>20</width>
+    <height>20</height>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box</name>
+    <pv_name>Test_LLRF:DSO_Kly1:enable2</pv_name>
+    <x>590</x>
+    <y>460</y>
+    <height>30</height>
+    <label>Enable</label>
+  </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
     <pv_name>Test_LLRF:DSO_Kly1:info2.VAL$</pv_name>
-    <x>10</x>
-    <y>460</y>
+    <x>35</x>
+    <y>465</y>
     <width>550</width>
     <format>6</format>
+  </widget>
+
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>Test_LLRF:DSO_Kly1:enabled3</pv_name>
+    <x>10</x>
+    <y>490</y>
+    <width>20</width>
+    <height>20</height>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box</name>
+    <pv_name>Test_LLRF:DSO_Kly1:enable3</pv_name>
+    <x>590</x>
+    <y>485</y>
+    <height>30</height>
+    <label>Enable</label>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
     <pv_name>Test_LLRF:DSO_Kly1:info3.VAL$</pv_name>
-    <x>10</x>
-    <y>480</y>
+    <x>35</x>
+    <y>490</y>
     <width>550</width>
     <format>6</format>
+  </widget>
+
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>Test_LLRF:DSO_Kly1:enabled4</pv_name>
+    <x>10</x>
+    <y>515</y>
+    <width>20</width>
+    <height>20</height>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box</name>
+    <pv_name>Test_LLRF:DSO_Kly1:enable4</pv_name>
+    <x>590</x>
+    <y>510</y>
+    <height>30</height>
+    <label>Enable</label>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
     <pv_name>Test_LLRF:DSO_Kly1:info4.VAL$</pv_name>
-    <x>10</x>
-    <y>500</y>
+    <x>35</x>
+    <y>515</y>
     <width>550</width>
     <format>6</format>
   </widget>
+
+
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>ASYNRec.bob</file>
+        <macros>
+          <P>$(S)_LLRF:</P>
+          <R>DSO$(N):ASYN</R>
+        </macros>
+        <target>replace</target>
+        <description>Debug</description>
+      </action>
+    </actions>
+    <x>650</x>
+    <y>540</y>
+    <width>80</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+
 </display>

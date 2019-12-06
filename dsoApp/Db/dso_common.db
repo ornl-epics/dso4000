@@ -8,18 +8,26 @@ record(bo, "$(P)$(R):setup")
     field(OUT,  "@dso.proto setup $(L)")
 }
 
+# Patch channel 1: Trigger time scale
+record(waveform, "$(P)$(R):ch1")
+{
+    field(FLNK, "$(P)$(R):xincr")
+}
+
+# Read time scale from ch 1
+# (all channels are the same)
 record(ai, "$(P)$(R):xincr")
 {
+    field(TPRO, "1")
     field(DTYP, "stream")
     field(INP,  "@dso.proto xincr $(L)")
-    field(SCAN, "5 second")
     field(FLNK, "$(P)$(R):computex")
 }
 
 record(aSub, "$(P)$(R):computex")
 {
     field(SNAM, "asub_compute_x")
-    field(INPA, "$(P)$(R):xincr")
+    field(INPA, "$(P)$(R):xincr MS")
     field(INPB, "1000")
     field(FTA,  "DOUBLE")
     field(FTB,  "DOUBLE")
@@ -30,7 +38,7 @@ record(aSub, "$(P)$(R):computex")
 
 record(waveform, "$(P)$(R):x")
 {
-    field(INP,  "$(P)$(R):computex.VALA")
+    field(INP,  "$(P)$(R):computex.VALA MS")
     field(NELM, "10000")
     field(FTVL, "DOUBLE")
     field(EGU,  "ms")

@@ -3,23 +3,80 @@
 # L Link (port)
 # C Scope channel 1-4
 
+# Enable/disable channel record for UI
+# Don't write this value to scope right away,
+# because that could happen in the middle of reading,
+# and then we time out because we're trying to read
+# a disabled channel
+record(bo, "$(P)$(R):enable$(C)")
+{
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(DOL,  "1")
+    field(PINI, "YES")
+}
+
+# Periodically, write the enabled state,
+# then check it and if enabled, read data
+record(bo, "$(P)$(R):do_enabl$(C)")
+{
+    field(TPRO, "1")
+    field(SCAN, "5 second")
+    field(DTYP, "stream")
+    field(OMSL, "closed_loop")
+    field(DOL,  "$(P)$(R):enable$(C)")
+    field(OUT,  "@dso.proto enable($(C)) $(L)")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(FLNK, "$(P)$(R):enabled$(C)")
+}
+
+# Check if channel is enabled
+record(bi, "$(P)$(R):enabled$(C)")
+{
+    field(TPRO, "1")
+    field(DTYP, "stream")
+    field(INP,  "@dso.proto enabled($(C)) $(L)")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(FLNK, "$(P)$(R):info$(C)")
+}
+
+# Read info and trigger rest, but only when enabled
+record(lsi, "$(P)$(R):info$(C)")
+{
+    field(TPRO, "1")
+    field(SDIS, "$(P)$(R):enabled$(C)")
+    field(DISV, "0")
+    field(DISS, "INVALID")
+    field(DTYP, "stream")
+    field(INP,  "@dso.proto info($(C)) $(L)")
+    field(SIZV, "100")
+    field(FLNK, "$(P)$(R):ch$(C)_mult")
+}
+
+# Waveform scaling factor
 record(ai, "$(P)$(R):ch$(C)_mult")
 {
+    field(TPRO, "1")
     field(DTYP, "stream")
-    field(INP,  "@dso.proto mult$(C) $(L)")
-    field(SCAN, "2 second")
+    field(INP,  "@dso.proto mult($(C)) $(L)")
     field(FLNK, "$(P)$(R):ch$(C)_raw")
 }
+# Raw Waveform
 record(waveform, "$(P)$(R):ch$(C)_raw")
 {
+    field(TPRO, "1")
     field(DTYP, "stream")
-    field(INP,  "@dso.proto curve$(C) $(L)")
+    field(INP,  "@dso.proto curve($(C)) $(L)")
     field(NELM, "10000")
     field(FTVL, "CHAR")
     field(FLNK, "$(P)$(R):ch$(C)_calc")
 }
+# Scale
 record(aSub, "$(P)$(R):ch$(C)_calc")
 {
+    field(TPRO, "1")
     field(SNAM, "asub_compute_y")
     field(INPA, "$(P)$(R):ch$(C)_mult")
     field(INPB, "$(P)$(R):ch$(C)_raw")
@@ -30,19 +87,13 @@ record(aSub, "$(P)$(R):ch$(C)_calc")
     field(NOVA, "10000")
     field(FLNK, "$(P)$(R):ch$(C)")
 }
+# Scaled waveform
 record(waveform, "$(P)$(R):ch$(C)")
 {
+    field(TPRO, "1")
     field(INP,  "$(P)$(R):ch$(C)_calc.VALA")
     field(NELM, "10000")
     field(FTVL, "DOUBLE")
     field(EGU,  "V")
     field(PREC, "6")
-}
-
-record(lsi, "$(P)$(R):info$(C)")
-{
-    field(DTYP, "stream")
-    field(INP,  "@dso.proto info$(C) $(L)")
-    field(SIZV, "100")
-    field(SCAN, "10 second")
 }

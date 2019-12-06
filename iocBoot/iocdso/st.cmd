@@ -30,7 +30,6 @@ dbLoadRecords "db/dso_channel.db", "P=Test_LLRF:,R=DSO_Kly1,L=DSO,C=1"
 dbLoadRecords "db/dso_channel.db", "P=Test_LLRF:,R=DSO_Kly1,L=DSO,C=2"
 dbLoadRecords "db/dso_channel.db", "P=Test_LLRF:,R=DSO_Kly1,L=DSO,C=3"
 dbLoadRecords "db/dso_channel.db", "P=Test_LLRF:,R=DSO_Kly1,L=DSO,C=4"
-dbLoadRecords "db/dso_chain.db", "P=Test_LLRF:,R=DSO_Kly1"
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit
