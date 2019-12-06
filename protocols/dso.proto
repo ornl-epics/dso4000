@@ -42,7 +42,7 @@ curve1
   InTerminator="";
   MaxInput=10009;
   out ":DAT:SOU CH1;:CURV?";
-  in "#510000%r";
+  in "#510000%1r";
 }
 
 curve2
@@ -50,7 +50,7 @@ curve2
   InTerminator="";
   MaxInput=10009;
   out ":DAT:SOU CH2;:CURV?";
-  in "#510000%r";
+  in "#510000%1r";
 }
 
 curve3
@@ -58,7 +58,7 @@ curve3
   InTerminator="";
   MaxInput=10009;
   out ":DAT:SOU CH3;:CURV?";
-  in "#510000%r";
+  in "#510000%1r";
 }
 
 curve4
@@ -66,7 +66,7 @@ curve4
   InTerminator="";
   MaxInput=10009;
   out ":DAT:SOU CH4;:CURV?";
-  in "#510000%r";
+  in "#510000%1r";
 }
 
 
