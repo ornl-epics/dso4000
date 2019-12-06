@@ -13,4 +13,19 @@ some subroutine records to scale waveforms.
 Example commands to type:
  *IDN?
 
+Select ASCII:
+DATa:ENCd ASCIi;
+
+Select signed binary, MSB first:
+DATa:ENCd RIBinary;
+
+
+:HEAD OFF;:VERB ON;:DAT:STAR 1;:DAT:STOP 10000;:DAT:WID 1;:DAT:ENC ASCII;
+:DAT:SOU CH1;:CURV?
+
+DATa:ENCd RIBinary;:DAT:SOU CH1;:CURV?
+
+#510000xxxx
+
+
 

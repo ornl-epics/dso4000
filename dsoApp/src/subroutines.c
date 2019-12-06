@@ -33,6 +33,10 @@ static long asub_compute_y(aSubRecord *prec)
     int N = prec->nova;
     int i;
 
+    /* raw actually contains additional CR, LF at end,
+     * but we only use the first 10000 elements
+     * because of nova (not nob).
+     */   
     for (i=0; i<N; ++i)
         va[i] = raw[i]*mult;
     return 0;
