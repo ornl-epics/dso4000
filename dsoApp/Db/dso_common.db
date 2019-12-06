@@ -18,7 +18,6 @@ record(waveform, "$(P)$(R):ch1")
 # (all channels are the same)
 record(ai, "$(P)$(R):xincr")
 {
-    field(TPRO, "1")
     field(DTYP, "stream")
     field(INP,  "@dso.proto xincr $(L)")
     field(FLNK, "$(P)$(R):computex")

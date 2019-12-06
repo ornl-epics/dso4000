@@ -20,7 +20,6 @@ record(bo, "$(P)$(R):enable$(C)")
 # then check it and if enabled, read data
 record(bo, "$(P)$(R):do_enabl$(C)")
 {
-    field(TPRO, "1")
     field(SCAN, "5 second")
     field(DTYP, "stream")
     field(OMSL, "closed_loop")
@@ -34,7 +33,6 @@ record(bo, "$(P)$(R):do_enabl$(C)")
 # Check if channel is enabled
 record(bi, "$(P)$(R):enabled$(C)")
 {
-    field(TPRO, "1")
     field(DTYP, "stream")
     field(INP,  "@dso.proto enabled($(C)) $(L)")
     field(ZNAM, "Off")
@@ -45,7 +43,6 @@ record(bi, "$(P)$(R):enabled$(C)")
 # Read info and trigger rest, but only when enabled
 record(lsi, "$(P)$(R):info$(C)")
 {
-    field(TPRO, "1")
     field(SDIS, "$(P)$(R):enabled$(C)")
     field(DISV, "0")
     field(DISS, "INVALID")
@@ -58,7 +55,6 @@ record(lsi, "$(P)$(R):info$(C)")
 # Waveform scaling factor
 record(ai, "$(P)$(R):ch$(C)_mult")
 {
-    field(TPRO, "1")
     field(DTYP, "stream")
     field(INP,  "@dso.proto mult($(C)) $(L)")
     field(FLNK, "$(P)$(R):ch$(C)_raw")
@@ -66,7 +62,6 @@ record(ai, "$(P)$(R):ch$(C)_mult")
 # Raw Waveform
 record(waveform, "$(P)$(R):ch$(C)_raw")
 {
-    field(TPRO, "1")
     field(DTYP, "stream")
     field(INP,  "@dso.proto curve($(C)) $(L)")
     field(NELM, "10000")
@@ -76,7 +71,6 @@ record(waveform, "$(P)$(R):ch$(C)_raw")
 # Scale
 record(aSub, "$(P)$(R):ch$(C)_calc")
 {
-    field(TPRO, "1")
     field(SNAM, "asub_compute_y")
     field(INPA, "$(P)$(R):ch$(C)_mult")
     field(INPB, "$(P)$(R):ch$(C)_raw")
@@ -90,7 +84,6 @@ record(aSub, "$(P)$(R):ch$(C)_calc")
 # Scaled waveform
 record(waveform, "$(P)$(R):ch$(C)")
 {
-    field(TPRO, "1")
     field(INP,  "$(P)$(R):ch$(C)_calc.VALA")
     field(NELM, "10000")
     field(FTVL, "DOUBLE")
