@@ -1,6 +1,7 @@
 # Tektronix DSO 4000
 
-Terminator = LF;
+InTerminator = LF CR;
+OutTerminator = CR LF;
 ReplyTimeout = 2000;
 ReadTimeout = 5000;
 LockTimeout = 8000;
@@ -10,20 +11,13 @@ LockTimeout = 8000;
 # Get 10000 samples, 1 byte per sample
 setup
 {
-  out ":HEAD OFF;:VERB ON;:DAT:STAR 1;:DAT:STOP 10000;:DAT:WID 1;:DAT:ENC RIBinary;";
+  out ":HEAD OFF;:VERB ON;:DAT:STAR 1;:DAT:STOP 10000;:DAT:WID 1;:DAT:ENC ASCII;";
   @init
   {
-    out ":HEAD OFF;:VERB ON;:DAT:STAR 1;:DAT:STOP 10000;:DAT:WID 1;:DAT:ENC RIBinary;";
+    out ":HEAD OFF;:VERB ON;:DAT:STAR 1;:DAT:STOP 10000;:DAT:WID 1;:DAT:ENC ASCII;";
   }
 }
 
-# Could read waveform as ASCII,
-# Separator = ",";
-# in "%i";
-# 'raw' waveform with NELM=10000.
-#
-# But that creates about 4x more data to transfer.
-#
 # Binary curve reply:
 # '#5'    : 5 decimals for data size follow
 # '10000' : Number of data points
@@ -32,41 +26,42 @@ setup
 #
 # Protocol based on help from Dirk Zimoch:
 # Parse '#510000' verbatim,
-# then waveform record repeats %r for NELM.
+# then waveform record repeats %r for NELM,
+# followed by LF CR.
 # Cannot use 'Terminator' because <binary> could contain anything.
 # So stop after 'MaxInput'.
-# This does add CR/LF to the 'raw' waveform with NELM=10002,
-# but following 'asub_compute_y' only uses first 10000.
+#curve1
+#{
+#  InTerminator="";
+#  MaxInput=10009;
+#  out ":DAT:SOU CH1;:CURV?";
+#  in "#510000%1r\n\r";
+#}
+
+# Using ASCII, the Terminator ends a line, less chances of getting out of step
+Separator = ",";
 curve1
 {
-  InTerminator="";
-  MaxInput=10009;
   out ":DAT:SOU CH1;:CURV?";
-  in "#510000%1r";
+  in "%d";
 }
 
 curve2
 {
-  InTerminator="";
-  MaxInput=10009;
   out ":DAT:SOU CH2;:CURV?";
-  in "#510000%1r";
+  in "%d";
 }
 
 curve3
 {
-  InTerminator="";
-  MaxInput=10009;
   out ":DAT:SOU CH3;:CURV?";
-  in "#510000%1r";
+  in "%d";
 }
 
 curve4
 {
-  InTerminator="";
-  MaxInput=10009;
   out ":DAT:SOU CH4;:CURV?";
-  in "#510000%1r";
+  in "%d";
 }
 
 

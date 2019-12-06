@@ -10,16 +10,14 @@ record(ai, "$(P)$(R):ch$(C)_mult")
     field(SCAN, "2 second")
     field(FLNK, "$(P)$(R):ch$(C)_raw")
 }
-# Raw waveform contains 10000 data points + CR + LF
 record(waveform, "$(P)$(R):ch$(C)_raw")
 {
     field(DTYP, "stream")
     field(INP,  "@dso.proto curve$(C) $(L)")
-    field(NELM, "10002")
+    field(NELM, "10000")
     field(FTVL, "CHAR")
     field(FLNK, "$(P)$(R):ch$(C)_calc")
 }
-# Copy raw into .A, but only keep 10000 in VALA
 record(aSub, "$(P)$(R):ch$(C)_calc")
 {
     field(SNAM, "asub_compute_y")
@@ -27,7 +25,7 @@ record(aSub, "$(P)$(R):ch$(C)_calc")
     field(INPB, "$(P)$(R):ch$(C)_raw")
     field(FTA,  "DOUBLE")
     field(FTB,  "CHAR")
-    field(NOB,  "10002")
+    field(NOB,  "10000")
     field(FTVA, "DOUBLE")
     field(NOVA, "10000")
     field(FLNK, "$(P)$(R):ch$(C)")

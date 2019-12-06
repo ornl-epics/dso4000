@@ -33,7 +33,7 @@ static long asub_compute_y(aSubRecord *prec)
     int N = prec->nova;
     int i;
 
-    /* raw actually contains additional CR, LF at end,
+    /* raw may contain additional CR, LF at end,
      * but we only use the first 10000 elements
      * because of nova (not nob).
      */   
