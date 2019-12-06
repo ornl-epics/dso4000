@@ -9,29 +9,32 @@ LockTimeout = 8000;
 # Setup, either on-demand when processed, but also automatically when connecting:
 # Do not echo header in reply, but if you do, then use full name
 # Get 10000 samples, 1 byte per sample
+#
+# Start this and the 'enabled' commands used at the start of a sequence
+# of requests with \r\n to clear scope command queue
 setup
 {
-  out ":HEAD OFF;:VERB ON;:DAT:STAR 1;:DAT:STOP 10000;:DAT:WID 1;:DAT:ENC ASCII;";
+  out "\r\n:HEAD OFF;:VERB ON;:DAT:STAR 1;:DAT:STOP 10000;:DAT:WID 1;:DAT:ENC ASCII;";
   @init
   {
-    out ":HEAD OFF;:VERB ON;:DAT:STAR 1;:DAT:STOP 10000;:DAT:WID 1;:DAT:ENC ASCII;";
+    out "\r\n:HEAD OFF;:VERB ON;:DAT:STAR 1;:DAT:STOP 10000;:DAT:WID 1;:DAT:ENC ASCII;";
   }
 }
 
 # Is channel $1 enabled?
 enabled
 {
-  out ":SEL:CH\$1?";
+  out "\r\n:SEL:CH\$1?";
   in "%d";
 }
 
 # Enable/disable channel $1
 enable
 {
-  out ":SEL:CH\$1 %d";
+  out "\r\n:SEL:CH\$1 %d";
   @init
   {
-    out ":SEL:CH\$1?";
+    out "\r\n:SEL:CH\$1?";
     in "%d";
   }
 }
