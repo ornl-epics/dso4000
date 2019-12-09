@@ -337,10 +337,17 @@
     <height>20</height>
     <tooltip>$(actions)</tooltip>
   </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Mode::</text>
+    <x>10</x>
+    <y>550</y>
+    <width>130</width>
+  </widget>
   <widget type="radio" version="2.0.0">
     <name>Radio Button</name>
     <pv_name>Test_LLRF:DSO_Kly1:mode</pv_name>
-    <x>10</x>
+    <x>160</x>
     <y>550</y>
     <width>240</width>
     <height>20</height>
