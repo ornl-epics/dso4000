@@ -6,7 +6,7 @@
     <S>Test</S>
   </macros>
   <width>740</width>
-  <height>530</height>
+  <height>640</height>
   <widget type="xyplot" version="2.0.0">
     <name>X/Y Plot</name>
     <x>10</x>
@@ -332,7 +332,7 @@
       </action>
     </actions>
     <x>650</x>
-    <y>540</y>
+    <y>610</y>
     <width>80</width>
     <height>20</height>
     <tooltip>$(actions)</tooltip>
@@ -341,12 +341,41 @@
     <name>Radio Button</name>
     <pv_name>Test_LLRF:DSO_Kly1:mode</pv_name>
     <x>10</x>
-    <y>540</y>
+    <y>550</y>
     <width>240</width>
     <height>20</height>
     <items>
       <item>Item 1</item>
       <item>Item 2</item>
     </items>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Scope Read Time:</text>
+    <x>10</x>
+    <y>580</y>
+    <width>130</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>Test_LLRF:DSO_Kly1:scantime</pv_name>
+    <x>160</x>
+    <y>580</y>
+    <width>80</width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>Test_LLRF:DSO_Kly1:scandelay</pv_name>
+    <x>160</x>
+    <y>610</y>
+    <width>80</width>
+    <enabled>false</enabled>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Scope Read Delay:</text>
+    <x>10</x>
+    <y>610</y>
+    <width>130</width>
   </widget>
 </display>

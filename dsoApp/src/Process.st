@@ -4,6 +4,8 @@
  */
 program Process("P=Test_LLRF:,R=DSO_Kly1")
 
+%% #include <epicsTime.h>
+
 short mode;
 assign mode to "{P}{R}:mode";
 monitor mode;
@@ -11,43 +13,52 @@ monitor mode;
 short proc[4];
 assign proc to { "{P}{R}:proc1", "{P}{R}:proc2", "{P}{R}:proc3", "{P}{R}:proc4" };
 
+
+double scantime;
+assign scantime to "{P}{R}:scantime";
+
+double scandelay;
+assign scandelay to "{P}{R}:scandelay";
+monitor scandelay;
+
+
+%% epicsTimeStamp start, end;
 int i;
 
 ss process
 {
   state local
   {
-    when (mode > 0)
+    entry
     {
-      printf("Process: Remote\n");
+      printf("Process: Local\n");
+      scantime = 0.0;
+      pvPut(scantime);
     }
-    state remote
+
+    when (mode > 0) {} state remote
   }
 
   state remote
   {
-    when (mode < 1)
+    entry
     {
-      printf("Process: Local\n");
+      printf("Process: Remote\n");
     }
-    state local
 
-    when (delay(0.5))
-    {
-    }
-    state process
-  }
+    when (mode < 1) {} state local
 
-  state process
-  {
-    when ()
+    when (delay(scandelay))
     {
+%%    epicsTimeGetCurrent(&start);
       for (i=0; i<4; ++i)
       {
         proc[i] = 1;
         pvPut(proc[i], SYNC);
       }
-    }
-    state remote
+%%    epicsTimeGetCurrent(&end);
+%%    pVar->scantime = epicsTimeDiffInSeconds(&end, &start);
+      pvPut(scantime);
+    } state remote
   }
 }

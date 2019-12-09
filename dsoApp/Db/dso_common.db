@@ -3,6 +3,7 @@
 # L Link (port)
 # TPRO
 
+# Enabled/disable reading the scope
 record(bo, "$(P)$(R):mode")
 {
     field(DESC, "Enable remote access?")
@@ -10,6 +11,22 @@ record(bo, "$(P)$(R):mode")
     field(ONAM, "Remote")
     field(PINI, "YES")
     field(DOL,  "1")
+}
+
+# Updated by Process sequence with time spent reading waveforms
+record(ai, "$(P)$(R):scantime")
+{
+    field(EGU, "sec")
+    field(PREC, "3")
+}
+
+# Sequence's delay between waveform scans
+record(ai, "$(P)$(R):scandelay")
+{
+    field(EGU, "sec")
+    field(PREC, "3")
+    field(INP,  "0.5")
+    field(PINI, "YES")
 }
 
 # Initial setup, executed via @init in protocol
@@ -115,3 +132,4 @@ record(waveform, "$(P)$(R):x")
 #}
 #
 #   ==> Using "Process" sequence
+
