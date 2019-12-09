@@ -22,6 +22,9 @@ dso_DBD += dso_registrars.dbd
 # dso_registerRecordDeviceDriver.cpp derives from dso.dbd
 dso_SRCS += dso_registerRecordDeviceDriver.cpp
 dso_SRCS += subroutines.c
+dso_SRCS += Process.st
+
+Process_SNCFLAGS += +r
 
 # Build the main IOC entry point where needed
 dso_SRCS_DEFAULT += dsoMain.cpp
@@ -30,6 +33,7 @@ dso_SRCS_vxWorks += -nil-
 # Link in the code from our support library
 dso_LIBS += stream
 dso_LIBS += asyn
+dso_LIBS += seq pv
 
 # Link QSRV (pvAccess Server) if available
 ifdef EPICS_QSRV_MAJOR_VERSION

@@ -7,7 +7,6 @@ include $(TOP)/configure/CONFIG
 DB += asyn_debug.db
 DB += dso_common.db
 DB += dso_channel.db
-DB += dso_chain.db
 
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_TEMPLATE = <templatename>

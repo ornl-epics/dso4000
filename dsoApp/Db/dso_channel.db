@@ -2,6 +2,7 @@
 # R Record root
 # L Link (port)
 # C Scope channel 1-4
+# TPRO
 
 # Enable/disable channel record for UI
 # Don't write this value to scope right away,
@@ -16,11 +17,12 @@ record(bo, "$(P)$(R):enable$(C)")
     field(PINI, "YES")
 }
 
-# Periodically, write the enabled state,
+# Process chain for channel $(C):
+# Write the enabled state,
 # then check it and if enabled, read data
-record(bo, "$(P)$(R):do_enabl$(C)")
+record(bo, "$(P)$(R):proc$(C)")
 {
-    field(SCAN, "5 second")
+    field(TPRO, "$(TPRO)")
     field(DTYP, "stream")
     field(OMSL, "closed_loop")
     field(DOL,  "$(P)$(R):enable$(C)")
@@ -33,8 +35,8 @@ record(bo, "$(P)$(R):do_enabl$(C)")
 # Check if channel is enabled
 record(bi, "$(P)$(R):enabled$(C)")
 {
-    field(DTYP, "stream")
-    field(INP,  "@dso.proto enabled($(C)) $(L)")
+    field(TPRO, "$(TPRO)")
+    field(INP,  "$(P)$(R):enable$(C)")
     field(ZNAM, "Off")
     field(ONAM, "On")
     field(FLNK, "$(P)$(R):info$(C)")
@@ -43,6 +45,7 @@ record(bi, "$(P)$(R):enabled$(C)")
 # Read info and trigger rest, but only when enabled
 record(lsi, "$(P)$(R):info$(C)")
 {
+    field(TPRO, "$(TPRO)")
     field(SDIS, "$(P)$(R):enabled$(C)")
     field(DISV, "0")
     field(DISS, "INVALID")
@@ -55,6 +58,7 @@ record(lsi, "$(P)$(R):info$(C)")
 # Waveform scaling factor
 record(ai, "$(P)$(R):ch$(C)_mult")
 {
+    field(TPRO, "$(TPRO)")
     field(DTYP, "stream")
     field(INP,  "@dso.proto mult($(C)) $(L)")
     field(FLNK, "$(P)$(R):ch$(C)_raw")
@@ -62,6 +66,7 @@ record(ai, "$(P)$(R):ch$(C)_mult")
 # Raw Waveform
 record(waveform, "$(P)$(R):ch$(C)_raw")
 {
+    field(TPRO, "$(TPRO)")
     field(DTYP, "stream")
     field(INP,  "@dso.proto curve($(C)) $(L)")
     field(NELM, "10000")
@@ -71,6 +76,7 @@ record(waveform, "$(P)$(R):ch$(C)_raw")
 # Scale
 record(aSub, "$(P)$(R):ch$(C)_calc")
 {
+    field(TPRO, "$(TPRO)")
     field(SNAM, "asub_compute_y")
     field(INPA, "$(P)$(R):ch$(C)_mult")
     field(INPB, "$(P)$(R):ch$(C)_raw")
@@ -84,6 +90,7 @@ record(aSub, "$(P)$(R):ch$(C)_calc")
 # Scaled waveform
 record(waveform, "$(P)$(R):ch$(C)")
 {
+    field(TPRO, "$(TPRO)")
     field(INP,  "$(P)$(R):ch$(C)_calc.VALA")
     field(NELM, "10000")
     field(FTVL, "DOUBLE")

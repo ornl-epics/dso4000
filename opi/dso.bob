@@ -14,6 +14,32 @@
     <width>720</width>
     <height>400</height>
     <show_legend>false</show_legend>
+    <rules>
+      <rule name="Enable1" prop_id="traces[0].visible" out_exp="false">
+        <exp bool_exp="pv0&lt;1">
+          <value>false</value>
+        </exp>
+        <pv_name>Test_LLRF:DSO_Kly1:enabled1</pv_name>
+      </rule>
+      <rule name="Enable2" prop_id="traces[1].visible" out_exp="false">
+        <exp bool_exp="pv0&lt;1">
+          <value>false</value>
+        </exp>
+        <pv_name>Test_LLRF:DSO_Kly1:enabled2</pv_name>
+      </rule>
+      <rule name="Enable3" prop_id="traces[2].visible" out_exp="false">
+        <exp bool_exp="pv0&lt;1">
+          <value>false</value>
+        </exp>
+        <pv_name>Test_LLRF:DSO_Kly1:enabled3</pv_name>
+      </rule>
+      <rule name="Enable4" prop_id="traces[3].visible" out_exp="false">
+        <exp bool_exp="pv0&lt;1">
+          <value>false</value>
+        </exp>
+        <pv_name>Test_LLRF:DSO_Kly1:enabled4</pv_name>
+      </rule>
+    </rules>
     <x_axis>
       <title>Time [ms]</title>
       <autoscale>true</autoscale>
@@ -177,16 +203,14 @@
     <pv_name>Test_LLRF:DSO_Kly1:enabled1</pv_name>
     <x>10</x>
     <y>440</y>
-    <width>20</width>
-    <height>20</height>
   </widget>
   <widget type="checkbox" version="2.0.0">
     <name>Check Box</name>
     <pv_name>Test_LLRF:DSO_Kly1:enable1</pv_name>
+    <label>Enable</label>
     <x>590</x>
     <y>435</y>
     <height>30</height>
-    <label>Enable</label>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
@@ -195,22 +219,28 @@
     <y>440</y>
     <width>550</width>
     <format>6</format>
+    <rules>
+      <rule name="Enable" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&lt;1">
+          <value>false</value>
+        </exp>
+        <pv_name>Test_LLRF:DSO_Kly1:enabled1</pv_name>
+      </rule>
+    </rules>
   </widget>
   <widget type="led" version="2.0.0">
     <name>LED</name>
     <pv_name>Test_LLRF:DSO_Kly1:enabled2</pv_name>
     <x>10</x>
     <y>465</y>
-    <width>20</width>
-    <height>20</height>
   </widget>
   <widget type="checkbox" version="2.0.0">
     <name>Check Box</name>
     <pv_name>Test_LLRF:DSO_Kly1:enable2</pv_name>
+    <label>Enable</label>
     <x>590</x>
     <y>460</y>
     <height>30</height>
-    <label>Enable</label>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
@@ -219,23 +249,28 @@
     <y>465</y>
     <width>550</width>
     <format>6</format>
+    <rules>
+      <rule name="Enable" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&lt;1">
+          <value>false</value>
+        </exp>
+        <pv_name>Test_LLRF:DSO_Kly1:enabled2</pv_name>
+      </rule>
+    </rules>
   </widget>
-
   <widget type="led" version="2.0.0">
     <name>LED</name>
     <pv_name>Test_LLRF:DSO_Kly1:enabled3</pv_name>
     <x>10</x>
     <y>490</y>
-    <width>20</width>
-    <height>20</height>
   </widget>
   <widget type="checkbox" version="2.0.0">
     <name>Check Box</name>
     <pv_name>Test_LLRF:DSO_Kly1:enable3</pv_name>
+    <label>Enable</label>
     <x>590</x>
     <y>485</y>
     <height>30</height>
-    <label>Enable</label>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
@@ -244,23 +279,28 @@
     <y>490</y>
     <width>550</width>
     <format>6</format>
+    <rules>
+      <rule name="Enable" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&lt;1">
+          <value>false</value>
+        </exp>
+        <pv_name>Test_LLRF:DSO_Kly1:enabled3</pv_name>
+      </rule>
+    </rules>
   </widget>
-
   <widget type="led" version="2.0.0">
     <name>LED</name>
     <pv_name>Test_LLRF:DSO_Kly1:enabled4</pv_name>
     <x>10</x>
     <y>515</y>
-    <width>20</width>
-    <height>20</height>
   </widget>
   <widget type="checkbox" version="2.0.0">
     <name>Check Box</name>
     <pv_name>Test_LLRF:DSO_Kly1:enable4</pv_name>
+    <label>Enable</label>
     <x>590</x>
     <y>510</y>
     <height>30</height>
-    <label>Enable</label>
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
@@ -269,9 +309,15 @@
     <y>515</y>
     <width>550</width>
     <format>6</format>
+    <rules>
+      <rule name="Enable" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0&lt;1">
+          <value>false</value>
+        </exp>
+        <pv_name>Test_LLRF:DSO_Kly1:enabled4</pv_name>
+      </rule>
+    </rules>
   </widget>
-
-
   <widget type="action_button" version="3.0.0">
     <name>Action Button</name>
     <actions>
@@ -291,5 +337,16 @@
     <height>20</height>
     <tooltip>$(actions)</tooltip>
   </widget>
-
+  <widget type="radio" version="2.0.0">
+    <name>Radio Button</name>
+    <pv_name>Test_LLRF:DSO_Kly1:mode</pv_name>
+    <x>10</x>
+    <y>540</y>
+    <width>240</width>
+    <height>20</height>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
 </display>

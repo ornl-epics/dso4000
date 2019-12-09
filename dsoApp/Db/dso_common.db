@@ -1,30 +1,44 @@
 # P Prefix
 # R Record root
 # L Link (port)
+# TPRO
 
+record(bo, "$(P)$(R):mode")
+{
+    field(DESC, "Enable remote access?")
+    field(ZNAM, "Local")
+    field(ONAM, "Remote")
+    field(PINI, "YES")
+    field(DOL,  "1")
+}
+
+# Initial setup, executed via @init in protocol
 record(bo, "$(P)$(R):setup")
 {
     field(DTYP, "stream")
     field(OUT,  "@dso.proto setup $(L)")
 }
 
-# Patch channel 1: Trigger time scale
+
+# Read time scale from ch 1
+# (all channels are the same)
+# after ch1 has been processed
 record(waveform, "$(P)$(R):ch1")
 {
     field(FLNK, "$(P)$(R):xincr")
 }
 
-# Read time scale from ch 1
-# (all channels are the same)
+# Time (X) axis
 record(ai, "$(P)$(R):xincr")
 {
+    field(TPRO, "$(TPRO)")
     field(DTYP, "stream")
     field(INP,  "@dso.proto xincr $(L)")
     field(FLNK, "$(P)$(R):computex")
 }
-
 record(aSub, "$(P)$(R):computex")
 {
+    field(TPRO, "$(TPRO)")
     field(SNAM, "asub_compute_x")
     field(INPA, "$(P)$(R):xincr MS")
     field(INPB, "1000")
@@ -34,12 +48,70 @@ record(aSub, "$(P)$(R):computex")
     field(NOVA, "10000")
     field(FLNK, "$(P)$(R):x")
 }
-
 record(waveform, "$(P)$(R):x")
 {
+    field(TPRO, "$(TPRO)")
     field(INP,  "$(P)$(R):computex.VALA MS")
     field(NELM, "10000")
     field(FTVL, "DOUBLE")
     field(EGU,  "ms")
     field(PREC, "6")
 }
+
+
+# Overall schedule:
+# Doesn't work. Will process proc1, proc2, .. right away
+#record(seq, "$(P)$(R):schedule")
+#{
+#    field(SCAN, "5 second")
+#    field(SELM, "All")
+#    field(DOL1, "1")
+#    field(LNK1, "$(P)$(R):proc1.PROC")
+#    field(DOL2, "1")
+#    field(LNK2, "$(P)$(R):proc2.PROC")
+#    field(DOL3, "1")
+#    field(LNK3, "$(P)$(R):proc3.PROC")
+#    field(DOL4, "1")
+#    field(LNK4, "$(P)$(R):proc4.PROC")
+#}
+
+# The sseq record with
+# field(WAIT1, "Wait")
+# field(LNK1="proc1.PROC CA")
+# would work, but requires that non-base record type 
+
+# This works until trying to scan 'schedule' too quickly
+#record(bo, "$(P)$(R):schedule")
+#{
+#    field(SCAN, "5 second")
+#    field(DTYP, "Async Soft Channel")
+#    field(DOL,  "1")
+#    field(OUT,  "$(P)$(R):proc1.PROC CA")
+#    field(FLNK, "$(P)$(R):schedule2")
+#}
+#record(bo, "$(P)$(R):schedule2")
+#{
+#    field(TPRO, "1")
+#    field(DTYP, "Async Soft Channel")
+#    field(DOL,  "1")
+#    field(OUT,  "$(P)$(R):proc2.PROC CA")
+#    field(FLNK, "$(P)$(R):schedule3")
+#}
+
+#record(bo, "$(P)$(R):schedule3")
+#{
+#    field(TPRO, "1")
+#    field(DTYP, "Async Soft Channel")
+#    field(DOL,  "1")
+#    field(OUT,  "$(P)$(R):proc3.PROC CA")
+#    field(FLNK, "$(P)$(R):schedule4")
+#}
+#record(bo, "$(P)$(R):schedule4")
+#{
+#    field(TPRO, "1")
+#    field(DTYP, "Async Soft Channel")
+#    field(DOL,  "1")
+#    field(OUT,  "$(P)$(R):proc4.PROC CA")
+#}
+#
+#   ==> Using "Process" sequence

@@ -5,3 +5,6 @@ registrar(vxi11RegisterCommands)
 
 function(asub_compute_x)
 function(asub_compute_y)
+
+registrar(ProcessRegistrar)
+
