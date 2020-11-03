@@ -6,7 +6,7 @@
     <S>Test</S>
   </macros>
   <width>740</width>
-  <height>640</height>
+  <height>700</height>
   <widget type="xyplot" version="2.0.0">
     <name>X/Y Plot</name>
     <x>10</x>
@@ -384,5 +384,16 @@
     <x>10</x>
     <y>610</y>
     <width>130</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <text>Note: Local interaction with the scope breaks remote communication! Put in "local" mode to use front panel, reboot IOC when communication is broken.</text>
+    <x>10</x>
+    <y>640</y>
+    <width>610</width>
+    <height>50</height>
+    <font>
+      <font family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
   </widget>
 </display>
