@@ -1,5 +1,5 @@
-Minimal EPICS Device Support for Tektronix DPO4000
-==================================================
+Minimal EPICS Device Support for Tektronix DSO/DPO4000
+======================================================
 
 Interfaced via TCP socket.
 Note: setting IP address will fail with "Invalid device IP address" unless a network cable is connected!
