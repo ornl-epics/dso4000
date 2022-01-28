@@ -1,6 +1,8 @@
 Minimal EPICS Device Support for Tektronix DSO/DPO4000
 ======================================================
 
+![Display](scope.png)
+
 Interfaced via TCP socket.
 Note: setting IP address will fail with "Invalid device IP address" unless a network cable is connected!
 "Socket Server" should be enabled, using port 4000.
