@@ -33,7 +33,7 @@ Get curve as ASCII and binay:
 Must not query channel that's disabled.
 Select and enable channel:
 
-   :SEL:CH4 1;
+    :SEL:CH4 1;
 
 Check if channel is enabled:
 
